@@ -26,10 +26,11 @@
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Python', 'Java', 'C', 'JavaScript', 'C++', 'C#'],
+                    labels: [{%for post in posts %} '{{post.nomi}}' , {%endfor%}],
+            
                     datasets: [{
-                        label: '# of Votes',
-                        data: [98, 50, 19, 43, 34, 25],
+                        label: 'Numbers',
+                        data: [{%for post in posts %} {{post.daromadi}} , {%endfor%}],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
